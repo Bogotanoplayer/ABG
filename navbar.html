@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abogados Gestión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unna:ital@1&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --blueReal: #205BFF;
+    --bluefake: #86a6fd;
+    --light-pink: #C7C7C7;
+    --input-field: #F7F7F7;
+    --text-input: #eceaea;
+    --less-white: #eceaeb;
+    --title: #333333;
+    --sm:1em;
+    --md:1.3em;
+    --ym:1.5em;
+    --lg:2em;
+    }
+    body{
+        font-family: 'Unna', serif;
+    }
+    html {
+        font-size: 62.5%;
+    }
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    .address{
+        display:flex;
+        font-size: var(--md);
+        color: var(--title);
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--text-input);
+        list-style: none;
+        padding: 0.8em 2em 0.8em 2em;
+        width: 100%;
+    }
+    .address a{
+        text-decoration: none;
+    }
+    .address img{
+        width: 1em;
+        transition: width 0.3s ease;
+    }
+    .address img:hover{
+        width: 2em;
+    }
+    nav{
+        width: 100%;
+        display: flex;
+        padding: 1.5em 1.5em 2em 1.5em;
+        align-items: center;
+        font-size: var(--md);
+        height: 5em;
+        border-bottom: 0.2em solid var(--bluefake);
+        background-color: var(--blueReal);
+    }
+    .contact{
+        display: none;
+    }
+    .contact img{
+        width: 2.5em;
+    }
+    .logo img{
+        width: 15em;
+        
+    }
+    .menu{
+        display: none;
+    }
+    .menu img{
+        width: 2.5em;
+    }
+    .right-nav {
+        display: flex;
+        list-style: none;
+        font-weight: 300;
+        margin-left: auto;
+        
+    }
+    .right-nav ul{
+        display: flex;
+        list-style: none;
+    }
+    .right-nav ul li a{
+        text-decoration: none;
+        color: var(--less-white);
+        font-weight: bold;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        margin-left: 1em;
+        transition: all 0.5s ease;
+        position: relative;
+        font-size: var(--md);
+        
+    }
+    .right-nav ul li a:hover{
+        color: var(--bluefake);
+        border-bottom: var(--white);
+        border-radius: 0.6em;
+        font-size: 1.52em;
+        transform: translateX(-0.2em);
+    }
+    @media(max-width :640px){
+        .right-nav ul{
+            display: none;
+        }
+        .menu,
+        .contact{
+            display:block
+        }
+        .left-nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5em;
+            margin: 0 auto; /
+        }
+        nav{
+            justify-content: center;
+        }
+        .street,
+        .number{
+            display: none;
+        }
+        .address img{
+            width: 1.5em;
+        }
+        .address {
+            justify-content: center;
+        }
+        
+    }
+
+</style>
+<body>
+    <header>
+        <ul class="address">
+            <li class="street">Calle 26 #33 Lugar 215</li>
+            <li>
+                <a href="https://instagram.com"><img src="./Logos/Instagram_font_awesome.svg" alt="IG"></a>
+                <a href="https://twitter.com"><img src="./Logos/Twitter_(CoreUI_Icons_v1.0.0).svg" alt="TW"></a>
+                <a href="https://linkedin.com"><img src="./Logos/Linkedin_(CoreUI_Icons_v1.0.0).svg" alt="LI"></a>
+            </li>
+            <li class="number">PBX: 525-67283</li>
+        </ul>
+    </header>
+    <nav>
+        <div class="left-nav">
+            <a href="/" class="contact"><img src="./Logos/User-info.svg" alt="#i"></a>
+            <a href="/" class="logo"><img src="./Logos/logo_yard_sale.svg" alt="logo"></a>
+            <a href="/" class="menu"><img src="./Logos//Menu,_Web_Fundamentals_(White).svg" alt="menu"></a>
+        </div>
+
+        <div class="right-nav">
+            <ul>
+                <li><a href="/">Sobre nosotros</a></li>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">Poopos</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>
