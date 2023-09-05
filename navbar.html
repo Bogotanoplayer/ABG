@@ -36,14 +36,14 @@
         margin: 0;
     }
     .address{
-        display:flex;
-        font-size: var(--md);
+        display: flex;
+        font-size: 2em ;
         color: var(--title);
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
-        background-color: var(--text-input);
+        background-color: var(--light-pink);
         list-style: none;
-        padding: 0.8em 2em 0.8em 2em;
+        padding: 1em 5em 1em 5em;
         width: 100%;
     }
     .address a{
@@ -51,20 +51,21 @@
     }
     .address img{
         width: 1em;
-        transition: width 0.3s ease;
+        transition: width 0.5s ease;
+        margin-right: 0.3em;
     }
     .address img:hover{
         width: 2em;
     }
     nav{
-        width: 100%;
         display: flex;
-        padding: 1.5em 1.5em 2em 1.5em;
-        align-items: center;
+        justify-content:space-between;
+        width: 100%;
+        height: 100vh;
+        padding: 5em 0em;
         font-size: var(--md);
-        height: 5em;
-        border-bottom: 0.2em solid var(--bluefake);
-        background-color: var(--blueReal);
+        background-color: var(--less-white);
+        border-bottom: solid 1em #205BFF;
     }
     .contact{
         display: none;
@@ -72,9 +73,8 @@
     .contact img{
         width: 2.5em;
     }
-    .logo img{
-        width: 15em;
-        
+    .logo img {
+        width: 28em;
     }
     .menu{
         display: none;
@@ -82,35 +82,82 @@
     .menu img{
         width: 2.5em;
     }
+    .titulo-izquierda{
+        display: flex;
+        flex-direction: column;
+        margin-top: 5em;
+    }
+    .titulo-izquierda :nth-child(1){
+        font-size: 2em;
+    }
+    .titulo-izquierda :nth-child(2){
+        margin-top: 0.2em;
+        font-size: 4.5em;
+    }
+    .titulo-izquierda :nth-child(3){
+        font-size: 5em;
+    }
+    .titulo-izquierda :nth-child(4){
+        font-size: 7em;
+    }
+    .titulo-izquierda :nth-child(5){
+        margin-top: 0.5em;
+        font-size: 2em;
+    }
+    .wa-me{
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+        gap: 1em;
+        width: 10em;
+        height: 4em;
+        font-size: 2em;
+        text-decoration: none;
+        color: var(--title);
+        border: solid 0.1em var(--bluefake);
+        transition: width 0.5s ease;
+    }
+    .wa-me img{
+        width: 1.5em;
+        border-right: solid 0.05em var(--title);
+    }
+    .wa-me:hover{
+        width: 15em;
+        transition: width 0.5s ease;
+    }
+    .left-nav{
+        margin-left: 10em;
+    }
     .right-nav {
         display: flex;
-        list-style: none;
-        font-weight: 300;
-        margin-left: auto;
-        
+        flex-direction: column;
     }
     .right-nav ul{
         display: flex;
         list-style: none;
+        justify-content: space-evenly;
     }
-    .right-nav ul li a{
+    .right-nav a{
         text-decoration: none;
-        color: var(--less-white);
+        font-size: 2em;
+        color: var(--title);
+        padding-bottom: 0.3em;
         font-weight: bold;
-        padding: 0.5em 0.5em 0.5em 0.5em;
-        margin-left: 1em;
-        transition: all 0.5s ease;
-        position: relative;
-        font-size: var(--md);
-        
+        transition: color 0.5s ease;
+        border-bottom: 0.1em solid var(--bluefake);
     }
-    .right-nav ul li a:hover{
-        color: var(--bluefake);
-        border-bottom: var(--white);
-        border-radius: 0.6em;
-        font-size: 1.52em;
-        transform: translateX(-0.2em);
+    .right-nav a:hover{
+        border-bottom: solid 0.15em var(--blueReal);
+        border-radius: 0.3em;
+        color: var(--blueReal);
+        transition: border-bottom 0.1s ease-in-out;
     }
+    .right-nav img {
+        padding-top: 1.5em;
+        width: 80em;
+        height: 84vh;
+    }
+    
     @media(max-width :640px){
         .right-nav ul{
             display: none;
@@ -143,32 +190,52 @@
 
 </style>
 <body>
+
     <header>
         <ul class="address">
-            <li class="street">Calle 26 #33 Lugar 215</li>
+            <li class="street">Calle 26 #33 Lugar B Oficina 215</li>
             <li>
                 <a href="https://instagram.com"><img src="./Logos/Instagram_font_awesome.svg" alt="IG"></a>
-                <a href="https://twitter.com"><img src="./Logos/Twitter_(CoreUI_Icons_v1.0.0).svg" alt="TW"></a>
+                <a href="https://twitter.com"><img src="./Logos/X_logo_2023.svg" alt="X"></a>
+                <a href="https://facebook.com"><img src="./Logos/Facebook_Icon.png" alt="F"></a>
+                <a href="https://threads.net"><img src="./Logos/Threads_(app)_logo.svg" alt="@"></a>
                 <a href="https://linkedin.com"><img src="./Logos/Linkedin_(CoreUI_Icons_v1.0.0).svg" alt="LI"></a>
             </li>
-            <li class="number">PBX: 525-67283</li>
+            <li class="number">Fijo: 525-67283 Celular: 311 508 5445 Nav</li>
         </ul>
     </header>
+
     <nav>
         <div class="left-nav">
             <a href="/" class="contact"><img src="./Logos/User-info.svg" alt="#i"></a>
-            <a href="/" class="logo"><img src="./Logos/logo_yard_sale.svg" alt="logo"></a>
+            <a href="/" class="logo"><img src="./Logos/Blue_Sky_Studios_2013_logo.svg" alt="logo"></a>
             <a href="/" class="menu"><img src="./Logos//Menu,_Web_Fundamentals_(White).svg" alt="menu"></a>
+
+            <div class="titulo-izquierda">
+                <p>Mantengase en movimiento y</p>
+                <p>CONSERVE</p>
+                <p>SU CALIDAD</p>
+                <p>DE VIDA</p>
+                <p>Permitanos poposearnos en su cara, pida su caca.</p>
+                <a class="wa-me" href="https://api.whatsapp.com/send/?phone=3115085445&text=Quiero%20una%20cita%20de%20consulta%20con%20Abogados%20Gestion&type=phone_number&app_absent=0"><img src="./Logos/WhatsApp.svg" alt="wa">Agende una consulta.</a>
+                
+            </div>
+        </div>
+        
+        <div class="right-nav">
+            <div>
+                <ul>
+                    <li><a href="/">Sobre nosotros</a></li>
+                    <li><a href="">Servicios</a></li>
+                    <li><a href="">Poopos</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/2ywbCRJ2/image-2023-08-29-201313396.png" alt="">
+            </div>
         </div>
 
-        <div class="right-nav">
-            <ul>
-                <li><a href="/">Sobre nosotros</a></li>
-                <li><a href="">Servicios</a></li>
-                <li><a href="">Poopos</a></li>
-                <li><a href="">Contacto</a></li>
-            </ul>
-        </div>
     </nav>
 </body>
 </html>
