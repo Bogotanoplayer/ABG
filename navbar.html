@@ -65,23 +65,15 @@
         padding: 5em 0em;
         font-size: var(--md);
         background-color: var(--less-white);
-        border-bottom: solid 1em #205BFF;
     }
-    .contact{
-        display: none;
-    }
-    .contact img{
-        width: 2.5em;
-    }
-    .logo img {
+    .logo :nth-child(1) {
         width: 28em;
     }
-    .menu{
+    .logo :nth-child(2){
         display: none;
+        width: 2em;
     }
-    .menu img{
-        width: 2.5em;
-    }
+    
     .titulo-izquierda{
         display: flex;
         flex-direction: column;
@@ -159,35 +151,67 @@
     }
     
     @media(max-width :640px){
-        .right-nav ul{
+        .right-nav {
             display: none;
         }
-        .menu,
-        .contact{
+        .logo :nth-child(2){
             display:block
         }
-        .left-nav {
-            display: flex;
-            align-items: center;
-            gap: 2.5em;
-            margin: 0 auto; /
-        }
+        
         nav{
             justify-content: center;
+            align-items: center;
         }
         .street,
         .number{
             display: none;
         }
         .address img{
-            width: 1.5em;
+            width: 1.2em;
         }
         .address {
             justify-content: center;
         }
-        
+        .left-nav{
+        margin-left: 0em;
     }
-
+        
+        .titulo-izquierda{
+        display: flex;
+        flex-direction: column;
+        margin-top: 5em;
+        }
+        .titulo-izquierda :nth-child(1){
+            font-size: 1.5em;
+        }
+        .titulo-izquierda :nth-child(2){
+            margin-top: 0.2em;
+            font-size: 3em;
+        }
+        .titulo-izquierda :nth-child(3){
+            font-size: 4em;
+        }
+        .titulo-izquierda :nth-child(4){
+            font-size: 6em;
+        }
+        .titulo-izquierda :nth-child(5){
+            margin-top: 0.5em;
+            font-size: 1.5em;
+        }
+        .wa-me{
+            width: 8em;
+            height: 3em;
+            font-size: 2em; 
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo :nth-child(1) {
+            width: 20em;
+        }
+    }
 </style>
 <body>
 
@@ -207,16 +231,15 @@
 
     <nav>
         <div class="left-nav">
-            <a href="/" class="contact"><img src="./Logos/User-info.svg" alt="#i"></a>
-            <a href="/" class="logo"><img src="./Logos/Blue_Sky_Studios_2013_logo.svg" alt="logo"></a>
-            <a href="/" class="menu"><img src="./Logos//Menu,_Web_Fundamentals_(White).svg" alt="menu"></a>
 
+            <a href="/" class="logo"><img src="./Logos/Blue_Sky_Studios_2013_logo.svg" alt="logo"><img src="./Logos//Menu,_Web_Fundamentals_(White).svg" alt="menu"></a>
+           
             <div class="titulo-izquierda">
                 <p>Mantengase en movimiento y</p>
                 <p>CONSERVE</p>
                 <p>SU CALIDAD</p>
                 <p>DE VIDA</p>
-                <p>Permitanos poposearnos en su cara, pida su caca.</p>
+                <p>Permitanos poposearnos en su cara, pida su caca .</p>
                 <a class="wa-me" href="https://api.whatsapp.com/send/?phone=3115085445&text=Quiero%20una%20cita%20de%20consulta%20con%20Abogados%20Gestion&type=phone_number&app_absent=0"><img src="./Logos/WhatsApp.svg" alt="wa">Agende una consulta.</a>
                 
             </div>
