@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abogados Gestión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unna:ital@1&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --blueReal: #205BFF;
+    --blueOcean: #8aa6f6e0;
+    --bluefake: #86a6fd;
+    --light-pink: #C7C7C7;
+    --input-field: #F7F7F7;
+    --text-input: #eceaea;
+    --less-white: #eceaeb;
+    --title: #333333;
+    --sm:1em;
+    --md:1.3em;
+    --ym:1.5em;
+    --lg:2em;
+    }
+    body{
+        font-family: 'Unna', serif;
+    }
+    html {
+        font-size: 62.5%;
+    }
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    .mobile-menu{
+        display: none;
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--bluefake);
+        position: relative;
+        top: 20em;
+        left: 10em;
+        border-radius: 2em;
+    }
+    .mobile-menu ul{
+        padding: 1em;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        font-size: 4em;
+        justify-content: flex-end;
+    }
+    .mobile-menu a{
+        text-decoration: none;
+        color: var(--less-white);
+    }
+    
+    @media(max-width: 640px){
+        .burguer-menu,
+        .mobile-menu{
+            display: block;
+        }
+    }
+</style>
+<body>
+    
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="/">Sobre nosotros</a></li>
+                <li><a href="/">Servicios</a></li>
+                <li><a href="/">Popos</a></li>
+                <li><a href="/">Contacto</a></li>
+                <li><a href="/">Entusiasmos</a></li>
+            </ul>
+        </div>
+
+</body>
+</html>
