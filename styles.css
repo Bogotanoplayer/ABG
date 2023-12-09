@@ -3,8 +3,9 @@
     --white: #FFFFFF;
     --black: #000000;
     --blueReal: #205BFF;
-    --blueOcean: #060fb5;
-    --bluefake: #86a6fd;
+    --blueMenu:  #0b1024;
+    --blueOcean: #0b1024;
+    --bluefake: #002955;
     --light-pink: #C7C7C7;
     --input-field: #F7F7F7;
     --text-input: #eceaea;
@@ -15,10 +16,6 @@
     --ym:1.5em;
     --lg:2em;
     }
-    body{
-        font-family: 'Unna', serif;
-        background-color: var(--less-white);
-    }
     html {
         font-size: 62.5%;
     }
@@ -27,13 +24,18 @@
         padding: 0;
         margin: 0;
     }
-    .inactive{
-        display: none;
+    body{
+        font-family: sans-serif;
+        background-color: var(--less-white);
     }
+    body .inactive{
+        display: none; 
+    }
+   
 /*Navbar*/
     nav{
         display: flex;
-        justify-content:space-evenly;
+        justify-content:space-around;
         align-items: center;
         width: 100vw;
         font-size: var(--md);
@@ -45,6 +47,10 @@
         width: 20em;
     }
     .burguer-menu{
+        display: none;
+        width: 4em;
+    }
+    .add-close-menu img{
         display: none;
         width: 4em;
     }
@@ -63,22 +69,135 @@
         height: 100vh;
         width: 100vw;
         background-color: var(--bluefake);
-        position: relative;
-        top: 3em;
-        left: 10em;
-        border-radius: 2em;
+        padding: 5em 1em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .mobile-menu ul{
-        padding: 1em;
         list-style: none;
         display: flex;
+        width: 90vw;
         flex-direction: column;
-        font-size: 4em;
-        justify-content: flex-end;
+        font-size: 1.7em;
+        gap: 1em;
     }
     .mobile-menu a{
         text-decoration: none;
         color: var(--less-white);
+    }
+    .mobile-menu li{
+       border: 0.1em solid var(--blueMenu);
+       background-color: var(--blueMenu);
+       padding: 0.8em;
+       border-radius: 0.5em;
+    }
+    .wa-me{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 0.4em;
+        padding: 0.6em;
+        width: 80vw;
+        margin-bottom: 4em;
+        font-size: 2em;
+        text-decoration: none;
+        transition: width 0.5s ease;
+        background-color: forestgreen;
+    }
+    .wa-me img{
+        width: 2em;
+    }
+
+    /*card-container*/
+    .card-container{
+        display: flex;
+        justify-content: center;
+        padding: 2em;
+        align-items: center;
+    }
+    .card{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        border:0.1em solid var(--bluefake) ;
+        background-color: var(--bluefake);
+        width: 33em;
+        height: 60em;
+        padding: 3em;
+        color: var(--less-white);
+        -webkit-transform: perspective(0) translateZ(0);
+        transform: perspective(0) translateZ(0);
+         box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+    }
+    .card1,
+    .card3{
+        background-color: var(--blueOcean);
+    }
+    .card h1{
+        font-size: 2.5em;
+        font-weight: bolder;
+    }
+    .card p{
+        font-size: var(--lg);
+    }
+    .card img{
+        width: 5em;
+    }
+    .read-more{
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        background-color: var(--title);
+        height: 1.5em;
+        padding: 1em;
+        align-items: center;
+        font-size: var(--lg);
+        color: var(--less-white);
+        width: 10em;
+        transition: width 0.25s ease-in-out;
+    }
+    .card:hover, .card:focus, .card:active {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.05);
+      }
+    .card a:hover{
+        width: 12em;
+    }
+    .body-big{
+        display: flex;
+        flex-direction: column;
+    }
+    .body-med{
+        display: flex;
+        background-color: var(--bluefake);
+        height: 60em;
+    }
+    .body-med img{
+        width: 50em;
+    }
+    .body-med div{
+        width: 50em;
+    }
+    .body-small{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0em 3em;
+        font-size: 1.7em;
+        color: var(--light-pink);
+    }
+    .body-small a{
+        font-size: 1.1em;
+        width: 20em;
+    }
+    .body-small h1{
+        font-size: 2em;
     }
     /*footer*/
     footer{
@@ -135,8 +254,39 @@
         text-decoration: none;
         color: var(--black);
     }
-    /*media*/
+    .wa-me-desk{
+        width: 10em;
+        position: fixed;
+        top: 20em;
+        text-decoration: none;
+        color: var(--less-white);
+        justify-content: space-evenly;
+        border-radius: 1.5em;
+    }
+    /*medias*/
     @media(max-width: 640px){
+        .burguer-menu{
+            display: block;
+        }
+        .add-close-menu img{
+            display: block;
+        }
+        .right-nav{
+            display: none;
+        }
+        .card-container{
+            flex-direction: column;
+        }
+        .card{
+            width: 85vw;
+        }
+        .body-med img{
+            display: none;
+        }
+        .body-small{
+            font-size: 1.8em;
+            padding: 0 0.5em;
+        }
         .pre-footer{
             flex-direction: column;
             gap: 1em;
@@ -148,15 +298,20 @@
         .number{
             display: none;
         }
-        .right-nav{
-            display: none;
-        }
-        .burguer-menu{
-            display: block;
-        }
+        .card:hover{
+            height: 60em;
+            width: 85vw;
+        
     }
+    .wa-me-desk{
+        display: none;
+    }
+}
     @media(max-width: 280px){
         .pre-footer{
             padding: 3em 7em;
         }
+        .ABG{
+            width: 13em;
         }
+    }
