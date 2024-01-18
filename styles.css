@@ -57,6 +57,30 @@
     .right-nav a{
         text-decoration: none;
         color: var(--less-white);
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        overflow: hidden;
+    }
+    .right-nav a:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        background: #2098D1;
+        height: 0.1em;
+        -webkit-transition-property: right;
+        transition-property: right;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    .right-nav a:hover:before, .right-nav a:focus:before, .right-nav a:active:before {
+        right: 0;
     }
     .right-nav ul{
         list-style: none;
@@ -110,7 +134,40 @@
         width: 2em;
     }
 
+    /*home load*/
+    .load-home{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 100vw;
+       height: 20vh;
+       padding: 8em;
+       gap: 2em;
+    }
+    .load-home p{
+        font-size: 5.5em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .load-home a{
+        font-size: 3em;
+    }
+    /*team image*/
+    .team-image{
+        position: relative;
+        line-height: 0;
+        margin-top: 10em;
+        bottom: -20em;
+    }
+    .team-image img{
+        width: 100vw;
+        height: 50em;
+    }
+
     /*card-container*/
+    .card-body-container{
+        display: flex;
+    }
     .card-container{
         display: flex;
         justify-content: center;
@@ -134,6 +191,10 @@
         transition-duration: 0.3s;
         -webkit-transition-property: transform;
         transition-property: transform;
+    }
+    .card:hover, .card:focus, .card:active {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.05);
     }
     .card1,
     .card3{
@@ -162,48 +223,61 @@
         width: 10em;
         transition: width 0.25s ease-in-out;
     }
-    .card:hover, .card:focus, .card:active {
-        -webkit-transform: scale(1.0);
-        transform: scale(1.05);
-      }
-    .card a:hover{
+    .read-more:hover{
         width: 12em;
+        background-color: #205BFF;
     }
-    .body-big{
-        display: flex;
-        flex-direction: column;
-    }
+
+    /*main body*/
     .body-med{
         display: flex;
         background-color: var(--bluefake);
         height: 60em;
     }
-    .body-med img{
-        width: 50em;
+    .body-right::before,
+    .body-left::after{
+        content: "";
+        width: 50vw;
+        height: 100%;
+        background-image: url("https://i.postimg.cc/Z5gSRStF/topic-statue-of-liberty-gettyimages-960610006-feature.jpg" );
+        background-size:cover;
+        background-position: center;
     }
     .body-med div{
-        width: 50em;
+        width: 50vw;
     }
-    .body-small{
+    .body-right p,.body-right h1{
+        text-align: start;
+    }
+    .body-left p, .body-left h1{
+        text-align: end;
+    }
+    .text-body-container{
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        padding: 0em 3em;
+        justify-content: space-between;
+        align-items: center;
         font-size: 1.7em;
         color: var(--light-pink);
+        padding: 3em;
     }
-    .body-small a{
+    .text-body-container a{
         font-size: 1.1em;
         width: 20em;
     }
-    .body-small h1{
-        font-size: 2em;
+    .text-body-container h1{
+        font-size: 2.5em;
+    }
+    .mobile-body-image{
+        display: none;
+        width: 100vw;
+        padding: 2em;
     }
     /*footer*/
     footer{
         background-color: var(--bluefake);
         width: 100vw;
-        color: var(--black);
+        color: var(--less-white);
     }
     .pre-footer{
         border-top: 0.2em solid var(--blueReal);
@@ -218,14 +292,14 @@
         list-style: none;
         gap: 0.5em;
         font-size: var(--lg);
-        width: 8em;    
+        width: 7em;    
     }
     .menu-footer p{
-        color: var(--blueOcean); 
+        color: var(--blueReal); 
     }
     .menu-footer a{ 
         text-decoration: none;
-        color: var(--black);
+        color: var(--less-white);
     }
     .redes-sociales ul{
         list-style: none;
@@ -249,6 +323,7 @@
         list-style: none;
         padding: 1em;
         border-top: 0.1em solid var(--blueReal);
+        color: var(--black);
     }
     .copyright a{
         text-decoration: none;
@@ -257,7 +332,8 @@
     .wa-me-desk{
         width: 10em;
         position: fixed;
-        top: 20em;
+        top: 18em;
+        right: 1em;
         text-decoration: none;
         color: var(--less-white);
         justify-content: space-evenly;
@@ -266,9 +342,6 @@
     /*medias*/
     @media(max-width: 640px){
         .burguer-menu{
-            display: block;
-        }
-        .add-close-menu img{
             display: block;
         }
         .right-nav{
@@ -280,12 +353,26 @@
         .card{
             width: 85vw;
         }
-        .body-med img{
-            display: none;
+        .body-right::before,
+        .body-left::after{
+           background-image: none;
         }
-        .body-small{
+        .body-right p,.body-right h1,
+        .body-left p, .body-left h1{
+            text-align: baseline;
+        }
+        .body-med{
+            height: 100vh;
+        }
+        .body-med div{
+            width: 100vw;
+        }
+        .text-body-container{
             font-size: 1.8em;
-            padding: 0 0.5em;
+            padding: 5em;
+        }
+        .mobile-body-image{
+            display: block;
         }
         .pre-footer{
             flex-direction: column;
